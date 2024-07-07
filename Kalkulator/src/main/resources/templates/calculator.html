@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Calculator</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+    <script th:src="@{/js/script.js}"></script>
+</head>
+<body>
+<div class="calculator">
+    <input type="text" id="display" readonly class="calculator-display" th:value="${calculation.display}"/>
+
+    <div class="calculator-buttons">
+        <button type="button" onclick="appendToDisplay('1')">1</button>
+        <button type="button" onclick="appendToDisplay('2')">2</button>
+        <button type="button" onclick="appendToDisplay('3')">3</button>
+        <button type="button" onclick="appendToDisplay('+')">+</button>
+
+        <button type="button" onclick="appendToDisplay('4')">4</button>
+        <button type="button" onclick="appendToDisplay('5')">5</button>
+        <button type="button" onclick="appendToDisplay('6')">6</button>
+        <button type="button" onclick="appendToDisplay('-')">-</button>
+
+        <button type="button" onclick="appendToDisplay('7')">7</button>
+        <button type="button" onclick="appendToDisplay('8')">8</button>
+        <button type="button" onclick="appendToDisplay('9')">9</button>
+        <button type="button" onclick="appendToDisplay('*')">*</button>
+
+        <button type="button" onclick="appendToDisplay('0')">0</button>
+        <button type="button" onclick="appendToDisplay('.')">.</button>
+        <button type="button" onclick="clearDisplay()">C</button>
+        <button type="button" onclick="appendToDisplay('/')">/</button>
+
+        <button type="button" class="button-equals" onclick="calculate()">=</button>
+    </div>
+
+    <div th:if="${calculation.result != null}">
+        <h2>Wynik: <span th:text="${calculation.result}">0.0</span></h2>
+    </div>
+</div>
+</body>
+</html>
