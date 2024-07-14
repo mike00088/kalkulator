@@ -1,1 +1,1 @@
-http://localhost:8080/calculate
+http://localhost:8080/calculator
